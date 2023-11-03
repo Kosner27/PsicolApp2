@@ -41,7 +41,7 @@ class IncioSesion : AppCompatActivity() {
 
 
 // Definir la URL del servidor al que se enviarán los datos para iniciar sesión
-        val url = "http://192.168.1.11/PsicolApp/LogIn.php"
+        val url = "http://192.168.1.9/PsicolApp/LogIn.php"
         // Crear una cola de solicitudes Volley
         val queue = Volley.newRequestQueue(this)
         // Crear una solicitud de tipo StringRequest para una solicitud POST
@@ -51,7 +51,7 @@ class IncioSesion : AppCompatActivity() {
                 val respuesta = response.trim()
                 if (response.trim() == "sesion iniciada") {
                     // La sesión se ha iniciado con éxito
-                    val intent = Intent(this, Index::class.java)
+                    val intent = Intent(this, Main::class.java)
                     startActivity(intent)
                 } else {
                     // La sesión no se inició con éxito (correo o contraseña incorrectos)
